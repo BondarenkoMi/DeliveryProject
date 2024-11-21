@@ -1,0 +1,87 @@
+body{
+    margin-top: -16px;
+    margin-inline: 0;
+}
+.header{
+    color: black;
+    display: flex; /* Включаем flexbox для контейнера */
+    justify-content: space-between; /* Разделяем содержимое: логотип слева, ссылки справа */
+    align-items: center; /* Выравниваем элементы по вертикали */
+    padding: 0 20px; /* Добавляем отступы по краям */
+    border-bottom: 2px solid black;
+
+
+}
+.header a{
+    text-decoration: none; /* Убирает подчеркивание */
+}
+div.logo{
+    margin-top: 25px;
+    margin-bottom: 10px;
+    display: inline-block;
+    border: 1px solid black;
+    background-color: green;
+    block-size: 90px;
+    inline-size: 120px;
+    border-radius: 20%;
+    font-family: "OpenSans", monospace;
+    font-weight: 500;
+    color: white;
+
+}
+.logo img{
+    margin-left: 35px;
+    width: 50px;
+
+}
+
+.logoTextSmall{
+    margin-left: 10%;
+    margin-top: -1;
+}
+.links{
+    font-size: 24px;
+    display: flex;
+    gap: 10px;
+
+}
+a {
+    color: inherit; /* Унаследует цвет текста от родительского элемента */
+
+}
+.info h1{
+    margin-left: 140px;
+}
+.info h2{
+    margin-left: 20px;
+}
+@font-face {
+    font-family: "OpenSans";
+    src:
+            url("/resources/fonts/OpenSans/OpenSans-Bold.woff2") format("woff2");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "OpenSans";
+    src:
+            url("/resources/fonts/OpenSans/OpenSans-Light.woff2") format("woff2");
+    font-weight: 300;
+}
+@font-face {
+    font-family: "OpenSans";
+    src:
+            url("/resources/fonts/OpenSans/OpenSans-Medium.woff2") format("woff2");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "OpenSans";
+    src:
+            url("/resources/fonts/OpenSans/OpenSans-Regular.woff2") format("woff2");
+    font-weight: 400;
+}
+@font-face {
+    font-family: "OpenSans";
+    src:
+            url("/resources/fonts/OpenSans/OpenSans-SemiBold.woff2") format("woff2");
+    font-weight: 600;
+}
