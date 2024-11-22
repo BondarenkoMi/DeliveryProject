@@ -3,8 +3,16 @@
 
 <div class="signin_form">
     <form method="post">
-        <input type="email" required placeholder="Email">
-        <input type="password" required placeholder="Пароль">
+        <ul>
+            <li>
+                <input type="email" required placeholder="Email">
+            </li>
+            <li>
+                <input type="password" required placeholder="Пароль">
+            </li>
+
+        </ul>
+
         <button type="submit">Войти</button>
     </form>
     <p>Еще не зарегистрированы?</p>
