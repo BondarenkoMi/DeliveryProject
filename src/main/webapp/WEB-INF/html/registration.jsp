@@ -2,6 +2,8 @@
 <%@include file="_header.jsp" %>
 
 <div class="registration_form">
+    <% if(!SecurityService.isSigned(request)) {
+        %>
     <form method="post">
         <ul>
             <li>
@@ -32,6 +34,11 @@
 
 
     </form>
+    <% } else {
+        %>
+    <h3>Вы успешно зарегстрированы!</h3>
+    <% }
+    %>
 </div>
 </body>
 <%@include file="_footer.jsp" %>

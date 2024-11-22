@@ -1,3 +1,5 @@
+<%@ page import="ru.delivery_project.services.SecurityService" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
@@ -20,20 +22,41 @@
         </a>
     </div>
     <div class="info">
+
         <h1>Fast Delivery</h1>
+
+
         <h2>Быстрая доставка товаров из заграницы</h2>
     </div>
 
     <div class="links">
 
-
-        <a href="<c:url value="/signin"/> ">
+        <%
+            Cookie[] cookies = request.getCookies();
+            if (SecurityService.isSigned(request)) {
+        %>
+        <a href="<c:url value='/signout'/>">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed"
                  viewBox="0 0 16 16">
                 <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3zm1 13h8V2H4z"/>
                 <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0"/>
             </svg>
-            Войти</a>
+            Выйти
+        </a>
+        <%
+        } else {
+        %>
+        <a href="<c:url value='/signin'/>">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed"
+                 viewBox="0 0 16 16">
+                <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3zm1 13h8V2H4z"/>
+                <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0"/>
+            </svg>
+            Войти
+        </a>
+        <%
+            }
+        %>
 
         <a href="<c:url value="/cart"/>">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag"
