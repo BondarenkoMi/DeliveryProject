@@ -1,4 +1,5 @@
 <%@ page import="ru.delivery_project.services.SecurityService" %>
+<%@ page import="ru.delivery_project.services.db.DBConnection" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -22,18 +23,17 @@
         </a>
     </div>
     <div class="info">
-
+        <a href="<c:url value="/"/> ">
         <h1>Fast Delivery</h1>
-
-
         <h2>Быстрая доставка товаров из заграницы</h2>
+        </a>
     </div>
 
     <div class="links">
 
         <%
             Cookie[] cookies = request.getCookies();
-            if (SecurityService.isSigned(request)) {
+            if (SecurityService.isSigned(request, response, DBConnection.getInstance())) {
         %>
         <a href="<c:url value='/signout'/>">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed"

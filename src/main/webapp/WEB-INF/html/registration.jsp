@@ -1,25 +1,26 @@
+<%@ page import="ru.delivery_project.services.db.DBConnection" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="_header.jsp" %>
 
 <div class="registration_form">
-    <% if(!SecurityService.isSigned(request)) {
+    <% if(!SecurityService.isSigned(request, response, DBConnection.getInstance())) {
         %>
     <form method="post">
-        <ul>
-            <li>
-                <input type="text" required placeholder="Имя">
+        <ul class="reg_input">
+            <li class="input_form">
+                <input type="text" required placeholder="Имя" name="first_name">
             </li>
-            <li>
-                <input type="text" required placeholder="Фамилия">
+            <li class="input_form">
+                <input type="text" required placeholder="Фамилия" name="second_name">
             </li>
-            <li>
-                <input type="email" required placeholder="Email">
+            <li class="input_form">
+                <input type="email" required placeholder="Email" name="email">
             </li>
-            <li>
-                <input type="tel" required placeholder="Номер телефона">
+            <li class="input_form">
+                <input type="tel" required placeholder="Номер телефона" name="telephone">
             </li>
-            <li>
-                <input type="password" required placeholder="Пароль">
+            <li class="input_form">
+                <input type="password" required placeholder="Пароль" name="password">
             </li>
         </ul>
         <ul>

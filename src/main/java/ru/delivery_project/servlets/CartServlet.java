@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import ru.delivery_project.services.SecurityService;
+import ru.delivery_project.services.db.DBConnection;
 
 import java.io.IOException;
 @WebServlet(name = "cartServlet", value = "/cart")
@@ -13,7 +14,7 @@ public class CartServlet extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
 
-        if(!SecurityService.isSigned(req)) {
+        if(!SecurityService.isSigned(req, res, DBConnection.getInstance())) {
             res.setStatus(401);
             req.setAttribute("title", "401 Unauthorized");
             req.setAttribute("message", "Войдите в систему и попробуйте еще раз");
