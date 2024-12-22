@@ -45,13 +45,13 @@ values
      'Apple Watch 10',
      6,
      48000,
-     'static/productImg/Apple_Watch_10.png'
+     'static/productsImg/Apple_Watch_10.png'
 ),
 (
     'Apple Watch SE',
     6,
     31000,
-    'static/productImg/Apple_Watch_SE.png'
+    'static/productsImg/Apple_Watch_SE.png'
 ),
     (
      'Iphone 15 Pro',

@@ -7,7 +7,7 @@ create table users (
     password_hash text not null ,
     telephone varchar(20) not null,
     current_token text,
-    role varchar(20) check ( role = any('user', 'admin') ) not null
+    role varchar(20) check ( role in('user', 'admin') ) not null
 );
 
 create table category(
@@ -32,7 +32,7 @@ create table cart(
 create table orders(
     order_id bigserial primary key,
     user_id int references users(id) not null,
-    status varchar(50) check (status = any('Оформлен', 'Доставляется', 'Доставлен', 'Отменен')) default 'Оформлен' not null ,
+    status varchar(50) check (status in ('Оформлен', 'Доставляется', 'Доставлен', 'Отменен')) default 'Оформлен' not null ,
     products_id int[] not null,
     created_at timestamp default current_timestamp not null
 );

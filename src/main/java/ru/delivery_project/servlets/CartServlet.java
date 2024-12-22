@@ -1,23 +1,16 @@
 package ru.delivery_project.servlets;
 
-import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import ru.delivery_project.db.DBConnection;
-import ru.delivery_project.db.dao.Product;
 import ru.delivery_project.db.dao.ProductInCart;
 import ru.delivery_project.services.CartService;
-import ru.delivery_project.services.NoProductException;
+import ru.delivery_project.exceptions.NoProductException;
 import ru.delivery_project.services.OrderService;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "cartServlet", value = "/cart")

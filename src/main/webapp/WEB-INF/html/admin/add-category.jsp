@@ -27,10 +27,8 @@
 </style>
 <h2 style="text-align: center;">Добавить категорию</h2>
 <form method="post" class="category-add">
-  <!-- Название товара -->
   <label>
     <input type="text" name="name" required placeholder="Название категории">
   </label>
-  <!-- Кнопка отправки -->
   <button type="submit" class="add">Добавить товар</button>
 </form>

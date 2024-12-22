@@ -195,4 +195,13 @@ public class ProductService {
             throw new RuntimeException(e);
         }
     }
+    public static List<Product> searchProductsByName(List<Product> products, String name) {
+        List<Product> searchedProducts = new ArrayList<>();
+        for (Product product : products) {
+            if (product.getName().toLowerCase().contains(name.toLowerCase())) {
+                searchedProducts.add(product);
+            }
+        }
+        return searchedProducts;
+    }
 }

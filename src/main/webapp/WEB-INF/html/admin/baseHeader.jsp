@@ -2,7 +2,6 @@
 <%@ include file="/WEB-INF/html/_header.jsp" %>
 <main>
   <div class="admin-container">
-    <!-- Навигационная панель -->
     <nav class="admin-nav">
       <div class="nav-logo">Admin Panel</div>
       <ul class="nav-links">

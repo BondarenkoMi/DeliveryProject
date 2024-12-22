@@ -1,6 +1,5 @@
 <%@include file="baseHeader.jsp"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    <!-- Основной контент -->
     <div class="admin-content">
         <c:choose>
             <c:when test="${param.section == 'users'}">

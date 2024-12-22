@@ -1,4 +1,4 @@
-package ru.delivery_project.services;
+package ru.delivery_project.exceptions;
 
 public class NoProductException extends Exception {
     public NoProductException(String message) {

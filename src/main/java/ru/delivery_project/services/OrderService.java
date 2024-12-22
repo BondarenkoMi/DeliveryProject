@@ -1,12 +1,12 @@
 package ru.delivery_project.services;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.delivery_project.db.DBConnection;
 import ru.delivery_project.db.dao.Order;
 import ru.delivery_project.db.dao.Product;
+import ru.delivery_project.exceptions.NoProductException;
 
 import java.sql.*;
 import java.time.LocalDateTime;
@@ -152,7 +152,7 @@ public class OrderService {
 
     public static void updateOrderStatus(int orderId, String status) {
         String sql = """
-                UPDATE orders SET status = CAST(? AS order_status)
+                UPDATE orders SET status = ?
                 WHERE order_id = ?;
                 """;
         try (

@@ -20,7 +20,6 @@
       <td>${order.order_id}</td>
       <td>${order.user_id}</td>
       <td>
-        <!-- Форма для изменения статуса -->
         <form method="POST" action="/admin/update-order-status">
           <input type="hidden" name="order_id" value="${order.order_id}" />
           <select name="status">

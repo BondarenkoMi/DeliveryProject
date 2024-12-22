@@ -27,12 +27,10 @@
 </style>
 <h2 style="text-align: center;">Добавить товар</h2>
 <form method="post" enctype="multipart/form-data" class="product-add">
-    <!-- Название товара -->
     <label>
         <input type="text" name="name" required placeholder="Название товара">
     </label>
 
-    <!-- Категория -->
     <label>
         <select name="categoryId" required>
             <option selected disabled>Выберите категорию</option>
@@ -42,16 +40,13 @@
         </select>
     </label>
 
-    <!-- Цена -->
     <label>
         <input type="number" name="price" min="0" step="0.01" required placeholder="Цена">
     </label>
 
-    <!-- Изображение товара -->
     <label style="width: 100px">
         <input type="file" name="picture" accept="image/*" required>
     </label>
 
-    <!-- Кнопка отправки -->
     <button type="submit" class="add">Добавить товар</button>
 </form>
