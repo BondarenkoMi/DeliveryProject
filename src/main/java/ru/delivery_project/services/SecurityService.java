@@ -29,7 +29,7 @@ public class SecurityService {
                 String email = JwtValidator.validate(jwtCookie).getSubject();
                 try (
                         Connection connection = DBConnection.getConnection();
-                        PreparedStatement preparedStatement = connection.prepareStatement(query);
+                        PreparedStatement preparedStatement = connection.prepareStatement(query)
                 ) {
                     preparedStatement.setString(1, email);
                     ResultSet resultSet = preparedStatement.executeQuery();
@@ -103,12 +103,12 @@ public class SecurityService {
         }
     }
 
-    public static void register(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public static void register(HttpServletRequest req, HttpServletResponse resp){
 
         String insertQuery =
                 """
-                        INSERT INTO users (first_name, second_name, email, password_hash, telephone) VALUES
-                        (?, ?, ?, ?, ?);
+                        INSERT INTO users (first_name, second_name, email, password_hash, telephone, role) VALUES
+                        (?, ?, ?, ?, ?, ?);
                         """;
         String selectQuery = "SELECT email, telephone FROM users WHERE email = ? OR telephone = ?";
         String email = req.getParameter("email");
@@ -117,14 +117,9 @@ public class SecurityService {
         String firstName = req.getParameter("first_name");
         String secondName = req.getParameter("second_name");
         String tel = req.getParameter("telephone");
-        String regex = "\\+?\\d{1,3}?[-.\\s]?\\(?(\\d{1,4})\\)?[-.\\s]?\\d{1,4}[-.\\s]?\\d{1,9}";
-        if (!tel.matches(regex)) {
-            req.setAttribute("message", "Неправильный формат номера телефона.");
-            req.getRequestDispatcher("WEB-INF/html/registration.jsp").forward(req,resp);
-        }
         try (
                 Connection conn = DBConnection.getConnection();
-                PreparedStatement selectStmt = conn.prepareStatement(selectQuery);
+                PreparedStatement selectStmt = conn.prepareStatement(selectQuery)
         ) {
             selectStmt.setString(1, email);
             selectStmt.setString(2, tel);
@@ -154,6 +149,7 @@ public class SecurityService {
             insertStmt.setString(3, email);
             insertStmt.setString(4, passwordHash);
             insertStmt.setString(5, tel);
+            insertStmt.setString(6, "user");
             insertStmt.executeUpdate();
             logger.info("user with email {} registered", email);
         } catch (SQLException e) {
