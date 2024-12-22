@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @WebServlet("/signout")
 public class SignOutServlet extends HttpServlet {
-    public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         SecurityService.signOut(req, res);
         res.sendRedirect(req.getContextPath() + "/");
 

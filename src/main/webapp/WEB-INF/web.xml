@@ -18,6 +18,7 @@
 
     <servlet-mapping>
         <servlet-name>default</servlet-name>
-        <url-pattern>/resources/*</url-pattern>
+        <url-pattern>/static/*</url-pattern>
     </servlet-mapping>
+
 </web-app>

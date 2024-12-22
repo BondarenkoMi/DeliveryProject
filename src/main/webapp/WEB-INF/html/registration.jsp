@@ -4,22 +4,22 @@
 <div class="registration_form">
     <% if(!SecurityService.isSigned(request)) {
         %>
-    <form method="post">
-        <ul>
-            <li>
-                <input type="text" required placeholder="Имя">
+    <form method="post" action="/registration">
+        <ul class="reg_input">
+            <li class="input_form">
+                <input type="text" required placeholder="Имя" name="first_name">
             </li>
-            <li>
-                <input type="text" required placeholder="Фамилия">
+            <li class="input_form">
+                <input type="text" required placeholder="Фамилия" name="second_name">
             </li>
-            <li>
-                <input type="email" required placeholder="Email">
+            <li class="input_form">
+                <input type="email" required placeholder="Email" name="email">
             </li>
-            <li>
-                <input type="tel" required placeholder="Номер телефона">
+            <li class="input_form">
+                <input type="tel" required placeholder="Номер телефона" name="telephone">
             </li>
-            <li>
-                <input type="password" required placeholder="Пароль">
+            <li class="input_form">
+                <input type="password" required placeholder="Пароль" name="password">
             </li>
         </ul>
         <ul>
@@ -32,8 +32,8 @@
 
         </ul>
 
-
     </form>
+    <h1 style="color: red">${message}</h1>
     <% } else {
         %>
     <h3>Вы успешно зарегстрированы!</h3>
