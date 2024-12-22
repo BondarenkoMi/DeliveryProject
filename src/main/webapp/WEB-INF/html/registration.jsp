@@ -1,11 +1,10 @@
-<%@ page import="ru.delivery_project.services.db.DBConnection" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="_header.jsp" %>
 
 <div class="registration_form">
-    <% if(!SecurityService.isSigned(request, response, DBConnection.getInstance())) {
+    <% if(!SecurityService.isSigned(request)) {
         %>
-    <form method="post">
+    <form method="post" action="/registration">
         <ul class="reg_input">
             <li class="input_form">
                 <input type="text" required placeholder="Имя" name="first_name">
@@ -33,8 +32,8 @@
 
         </ul>
 
-
     </form>
+    <h1 style="color: red">${message}</h1>
     <% } else {
         %>
     <h3>Вы успешно зарегстрированы!</h3>

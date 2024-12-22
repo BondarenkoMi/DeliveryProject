@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/ru/delivery_project/services/SecurityService.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migrations/V1_0__initdb.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migrations/V1_1__insert-users.sql" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/db/migrations/V1_3__insert-products.sql" dialect="PostgreSQL" />
+  </component>
+</project>

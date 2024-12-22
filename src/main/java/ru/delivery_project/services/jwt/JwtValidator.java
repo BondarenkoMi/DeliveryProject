@@ -22,4 +22,13 @@ public class JwtValidator {
     public static SecretKey getSecretKey() {
         return SECRET;
     }
+
+    public static String getUserEmail(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(SECRET)
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+    }
 }

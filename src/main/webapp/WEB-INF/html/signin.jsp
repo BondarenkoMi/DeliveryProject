@@ -2,7 +2,7 @@
 <%@include file="_header.jsp"%>
 
 <div class="signin_form">
-    <form method="post">
+    <form method="post" action="/signin">
         <ul>
             <li>
                 <input type="email" required placeholder="Email" name="email">
@@ -14,8 +14,8 @@
         </ul>
 
         <button type="submit">Войти</button>
-        <c:if test="${message}">
-            <p>${message}</p>
+        <c:if test="${not empty message}">
+            <p style="color: red">${message}</p>
         </c:if>
 
     </form>

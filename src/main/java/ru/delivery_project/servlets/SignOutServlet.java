@@ -6,14 +6,13 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import ru.delivery_project.services.SecurityService;
-import ru.delivery_project.services.db.DBConnection;
 
 import java.io.IOException;
 
 @WebServlet("/signout")
 public class SignOutServlet extends HttpServlet {
-    public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        SecurityService.signOut(req, res, DBConnection.getInstance());
+    public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        SecurityService.signOut(req, res);
         res.sendRedirect(req.getContextPath() + "/");
 
     }
