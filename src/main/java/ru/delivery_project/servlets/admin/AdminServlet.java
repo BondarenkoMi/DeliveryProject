@@ -33,6 +33,7 @@ public class AdminServlet extends HttpServlet {
                 req.setAttribute("categories", CategoryService.getCategories());
                 break;
         }
+        req.setAttribute("title", "Админ панель");
         req.getRequestDispatcher("/WEB-INF/html/admin/base.jsp").forward(req, resp);
     }
 }

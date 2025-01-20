@@ -16,7 +16,7 @@ public class MainServlet extends HttpServlet {
         Catalog catalog = CatalogService.getCatalog(req);
         req.setAttribute("products", catalog.getProducts());
         req.setAttribute("categories", catalog.getCategories());
-        req.setAttribute("title", "main page");
+        req.setAttribute("title", "Каталог");
         req.getRequestDispatcher("/WEB-INF/html/main.jsp").forward(req, res);
 
     }

@@ -1,4 +1,4 @@
-package ru.delivery_project.services.jwt;
+package ru.delivery_project.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

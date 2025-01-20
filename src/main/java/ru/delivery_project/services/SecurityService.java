@@ -7,8 +7,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.delivery_project.db.DBConnection;
-import ru.delivery_project.services.jwt.JwtGenerator;
-import ru.delivery_project.services.jwt.JwtValidator;
+import ru.delivery_project.jwt.JwtGenerator;
+import ru.delivery_project.jwt.JwtValidator;
 
 import java.io.IOException;
 import java.sql.*;
